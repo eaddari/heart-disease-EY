@@ -1,22 +1,21 @@
 import pandas as pd
-import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LogisticRegression
 
+from supervised import DATASET_PATH
 
-df = pd.read_csv('dataset\heart_preprocessed.csv')
+df = pd.read_csv(DATASET_PATH)
 
-
+corr_matrix_df = df[["age", "trestbps", "chol", "thalach", "oldpeak", "ca"]]
 
 # # Calcola la matrice di correlazione
-# correlation_matrix = df.corr()
+correlation_matrix = corr_matrix_df.corr()
 
 # # Visualizza la matrice
-# print(correlation_matrix)
+print(correlation_matrix)
 
-# sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-# plt.show()
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm")
+plt.show()
 
 
 # # #### Selezione delle feature
