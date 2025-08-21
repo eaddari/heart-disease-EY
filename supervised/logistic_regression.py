@@ -42,32 +42,32 @@ grid.fit(X_train, y_train)
 print("Best parameters:", grid.best_params_)
 print("Best cross-validation score:", grid.best_score_)
 
-# ### LOGISTIC REGRESSION ###
-# ##FEATURE SELECTION
-# X = df[['exang', 'cp', 'oldpeak', 'thalach', 'ca', 'slope', 'thal', 'sex']]
-# y = df["target"]
+### LOGISTIC REGRESSION ###
+##FEATURE SELECTION
+X = df[['exang', 'cp', 'oldpeak', 'thalach', 'ca', 'slope', 'thal', 'sex']]
+y = df["target"]
 
-# X_train, X_test, y_train, y_test = train_test_split(
-#     X, y, test_size=0.2, random_state=42
-# )
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
 
-# log_model = LogisticRegression(max_iter=1000, random_state=42)
+log_model = LogisticRegression(max_iter=1000, random_state=42)
 
-# log_model.fit(X_train, y_train)
+log_model.fit(X_train, y_train)
 
-# y_pred = log_model.predict(X_test)
+y_pred = log_model.predict(X_test)
 
-# class_report = classification_report(y_test, y_pred)
-# print(class_report)
+class_report = classification_report(y_test, y_pred)
+print(class_report)
 
-# param_grid = {"C": [0.1, 1, 10], "solver": ["liblinear", "saga"]}
+param_grid = {"C": [0.1, 1, 10], "solver": ["liblinear", "saga"]}
 
-# grid = GridSearchCV(
-#     estimator=log_model, param_grid=param_grid, scoring="accuracy", cv=5
-# )
+grid = GridSearchCV(
+    estimator=log_model, param_grid=param_grid, scoring="accuracy", cv=5
+)
 
-# grid.fit(X_train, y_train)
+grid.fit(X_train, y_train)
 
-# print("Best parameters:", grid.best_params_)
-# print("Best cross-validation score:", grid.best_score_)
+print("Best parameters:", grid.best_params_)
+print("Best cross-validation score:", grid.best_score_)

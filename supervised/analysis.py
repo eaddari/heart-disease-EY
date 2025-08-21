@@ -23,7 +23,7 @@ print(correlation_matrix)
 sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm")
 plt.show()
 
-df["target_label"] = df["target"].map({1: "Diagnosi negativa", 0: "Problemi cardiaci"})
+df["target_label"] = df["target"].map({1: "Diagnosi positiva", 0: "Problemi cardiaci"})
 
 #UNIVARIATI
 # Grafico univariato della variabile 'sex'
