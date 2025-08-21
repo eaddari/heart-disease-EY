@@ -96,5 +96,4 @@ for j in range(i + 1, rows * cols):
 
 plt.show()
 
-#Features che discriminano maggiormente --> fbs, cp, sex,exang
-#features numeriche che discriminano: age, thalach, oldpeak, ca(numero arterie principali colorate dalla fluoroscopia)
+#Features che discriminano maggiormente --> fbs, cp, sex,exang, age, thalach, oldpeak, ca(numero arterie principali colorate dalla fluoroscopia)
